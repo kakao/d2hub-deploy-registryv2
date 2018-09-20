@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+ENV TZ "Asia/Seoul"
+
+COPY nginx.conf.test /etc/nginx/nginx.conf
+
+COPY ssl/*.cert /etc/ssl/certs/
+COPY ssl/*.key /etc/ssl/private/
+
+COPY nginx.htpasswd /etc/nginx/conf.d/nginx.htpasswd
